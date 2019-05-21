@@ -1,0 +1,21 @@
+<!-- Renders different elements depending on different conditions -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<h4>NgSwitch</h4>
+<ul *ngFor="let person of people"
+    [ngSwitch]="'Uttarakhand'"> 
+ <!-- Above expression binds expression to ngSwitch directive -->
+  <li *ngSwitchCase="'Uttarakhand'" 
+      class="text-success">{{ person.name }} ({{ person.state }})
+  </li>
+  <li *ngSwitchCase="'Maharashtra'"
+      class="text-primary">{{ person.name }} ({{ person.state }})
+  </li>
+  <li *ngSwitchCase="'Andhra Pradesh'"
+      class="text-danger">{{ person.name }} ({{ person.state }})
+  </li>
+  <li *ngSwitchDefault 
+      class="text-warning">{{ person.name }} ({{ person.state }})
+  </li>
+<!-- If no condition is met then it will go with default directive -->
+</ul>

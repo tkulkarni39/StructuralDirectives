@@ -1,0 +1,12 @@
+<!-- Structural Directive: changes structure of DOM -->
+<!-- Iteration -->
+
+<h4>NgFor</h4>
+<ul *ngFor="let group of peopleByCountry; let i = index;"> 
+  <li>{{i+1}} - {{ group.country }}</li>
+  <ul>
+   <li *ngFor="let person of group.people; let i = index;"> 
+    {{i+1}} - {{ person.name }}
+   </li>
+  </ul>
+</ul>
